@@ -4,6 +4,9 @@ Truwallet is a minimalistic budgeting tool, running on mobile platform. Since it
 == Who Truewallet Is For
 Truewallet is for the people who want to manage their funds yet cannot have a bank account and thereby not able to use efficiently the budgeting services like http://www.mint.com.
 
+== Demo
+The demo version is availbale here: http://m.truewallet.com
+
 == To be continue
 
 Please notice, Truwallet is just started. So far there is done a wireframe in index.html;
