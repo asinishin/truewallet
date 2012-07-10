@@ -1,26 +1,27 @@
-<!doctype html>
+<!docaype html>
 <html>
 <head>
   <title>Truewallet</title> 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
-  <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
-  <script type="text/javascript" src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
+  <link rel="stylesheet" href="assets/application.css" />
+  <script type="text/javascript" src="assets/application.js"></script>
+  <style>
+    .slider-holder .ui-slider-switch { width: 10em }
+  </style>
 </head> 
 <body>
 
   <div data-role="page" id="home">
 
-    <div data-role="header">
-      <div style="position:absolute; top:0.4em; left:10px;">
-	<select name="planMode" id="planMode" data-native-menu="false">
-	  <option value="plan">Plan</option>
-	  <option value="fact" selected>Fact</option>
-	</select>
+    <div data-role="header" data-position="fixed">
+      <div data-role="navbar">
+	<ul>
+	  <li><a href="#" class="plan_switcher" data-icon="star">Plan</a></li>
+	  <li><a href="#period" data-icon="grid">Jul 2012</a></li>
+	  <li><a href="#" data-icon="gear">Settings</a></li>
+	</ul>
       </div>
-      <h1>Jul 2012</h1>
-      <a href="#options" class="ui-btn-right" data-transition="slidedown">Options</a>
     </div>
 
     <div data-role="content">
@@ -97,20 +98,19 @@
 
   <div data-role="page" id="sales">
 
-    <div data-role="header">
-      <div style="position:absolute; top:0.4em; left:10px;">
-	<select name="planMode" id="planMode" data-native-menu="false">
-	  <option value="plan">Plan</option>
-	  <option value="fact" selected>Fact</option>
-	</select>
+    <div data-role="header" data-position="fixed">
+      <div data-role="navbar">
+	<ul>
+	  <li><a href="#" class="plan_switcher" data-icon="star">Plan</a></li>
+	  <li><a href="#period" data-icon="grid">Jul 2012</a></li>
+	  <li><a href="#" data-icon="gear">Settings</a></li>
+	</ul>
       </div>
-      <h1>Jul 2012</h1>
-      <a href="#options" class="ui-btn-right" data-transition="slidedown">Options</a>
     </div>
 
     <div data-role="content">
 
-      <a href="#home" style="float:left; position:absolute; top:4.4em; left:5px;" data-rel="back" data-role="button" data-inline="true" data-icon="arrow-l" data-iconpos="notext">Button</a>
+      <a href="#home" style="float:left; position:absolute; top:5.0em; left:5px;" data-rel="back" data-role="button" data-inline="true" data-icon="arrow-l" data-iconpos="notext">Button</a>
       <div style="text-align: center; padding-bottom: 18px;"> 
 	<h2>Overall Sales</h2>
       </div>
@@ -141,10 +141,10 @@
 
   </div>
 
-  <div data-role="page" id="options">
+  <div data-role="page" id="period">
 
     <div data-role="header">
-      <h1>Options</h1>
+      <h1>Select Period</h1>
     </div>
 
     <div data-role="content"> 
@@ -204,8 +204,8 @@
         </div>
         
 	<div class="ui-grid-a">
-	  <div class="ui-block-b"><a href="#home" data-role="button" data-rel="back">OK</a></div>
-	  <div class="ui-block-b"><a href="#home" data-role="button" data-rel="back">Cancel</a></div>
+	  <div class="ui-block-b"><a href="#" data-role="button" data-rel="back">OK</a></div>
+	  <div class="ui-block-b"><a href="#" data-role="button" data-rel="back">Cancel</a></div>
 	</div>
 
       </form>
@@ -214,4 +214,52 @@
   </div>
 
 </body>
+<script>
+var planMode = true;
+
+  $('#home').live( 'pageinit', function() {
+    Plan.init('#home');
+  });
+
+  $('#home').live( 'pageshow', function() {
+    Plan.sync('#home');
+  });
+
+  $('#sales').live( 'pageinit', function() {
+    Plan.init('#sales');
+  });
+
+  $('#sales').live( 'pageshow', function() {
+    Plan.sync('#sales');
+  });
+
+
+Plan = {
+  init: function(pg){
+    $(pg + ' a.plan_switcher').bind('vclick', function(){
+      if (planMode){
+	planMode = false;
+      } else {
+	planMode = true;
+      }
+      Plan.sync(pg);
+      return false;
+    });
+  },
+
+  sync: function(pg){
+    var t = '';
+    if (planMode){
+      t = 'Plan';
+      $(pg + ' a.plan_switcher span.ui-icon').removeClass('ui-icon-check'); 
+      $(pg + ' a.plan_switcher span.ui-icon').addClass('ui-icon-star'); 
+    } else {
+      t = 'Fact';
+      $(pg + ' a.plan_switcher span.ui-icon').removeClass('ui-icon-star'); 
+      $(pg + ' a.plan_switcher span.ui-icon').addClass('ui-icon-check'); 
+    }
+    $(pg + ' a.plan_switcher span.ui-btn-text').text(t); 
+  }
+}
+</script>
 </html>
