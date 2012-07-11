@@ -14,6 +14,11 @@
       padding-bottom: 17px;
     }
     .subheader h3, h2 { margin: 0 }
+    .right-btn {
+      float: right;
+      top: 0px;
+      right: 5px;
+    }
     .left-btn {
       float: left;
       top: 0px;
@@ -50,7 +55,7 @@
         </li>
 
         <li>
-          <a href="#sales">
+          <a href="#journal">
             <h3>Sales</h3>
             <h3 class="ui-li-aside" style="margin-top:9px; margin-right:5px;">1,400,000.99</h3>
           </a>
@@ -108,8 +113,7 @@
 
   </div>
 
-  <div data-role="page" id="sales">
-
+  <div data-role="page" id="journal">
     <div data-role="header" data-position="fixed">
       <div data-role="navbar">
 	<ul>
@@ -121,7 +125,7 @@
     </div>
 
     <div data-role="content">
-      <a href="#home" class="left-btn" data-rel="back" data-role="button" data-inline="true" data-icon="arrow-l" data-iconpos="notext">Button</a>
+      <a href="#home" class="left-btn" data-rel="back" data-role="button" data-inline="true" data-icon="arrow-l" data-iconpos="notext"></a>
 
       <div class="subheader"> 
 	<h2>Sales at</h2>
@@ -131,13 +135,78 @@
       <ul data-role="listview">
 
         <li>
-	  <h3>Programming</h3>
-	  <h3 class="ui-li-aside" style="margin-top:9px; margin-right:20px;">1,120,000.99</h3>
+          <a href="#entry-log">
+	    <h3>Programming</h3>
+	    <h3 class="ui-li-aside" style="margin-top:9px; margin-right:5px;">1,120,000.99</h3>
+	  </a>
         </li>
 
         <li>
 	  <h3>Testing</h3>
 	  <h3 class="ui-li-aside" style="margin-top:9px; margin-right:20px;">1,000,000.25</h3>
+        </li>
+       
+      </ul>
+
+      <div style="text-align: center; padding-top: 28px;"> 
+	<a href="#home" data-rel="back" data-role="button" data-inline="true" data-icon="arrow-l">Back</a>
+      </div>
+
+    </div>
+
+    <div data-role="footer">
+      <h4>&copy; 2012 Truewallet</h4>
+    </div>
+
+  </div>
+
+  <div data-role="page" id="entry-log">
+    <div data-role="header" data-position="fixed">
+      <div data-role="navbar">
+	<ul>
+	  <li><a href="#" class="plan_switcher" data-icon="star">Plan</a></li>
+	  <li><a href="#period" data-icon="grid">Jul 2012</a></li>
+	  <li><a href="#settings" data-icon="gear">Settings</a></li>
+	</ul>
+      </div>
+    </div>
+
+    <div data-role="content">
+      <a href="#home" class="left-btn" data-rel="back" data-role="button" data-inline="true" data-icon="arrow-l" data-iconpos="notext"></a>
+
+      <div class="subheader"> 
+	<h2>Programming at</h2>
+	<h3>Blue Wallet</h3>
+      </div>
+
+      <ul data-role="listview">
+
+        <li>
+	  <div>
+	    <a href="#" class="left-btn" data-role="button" data-inline="true" data-icon="arrow-d" data-iconpos="notext"></a>
+	  </div>
+	  <div>
+	    <a href="#" class="right-btn" data-role="button" data-inline="true" data-icon="delete" data-iconpos="notext"></a>
+	  </div>
+	  <div>
+	    <h3></h3>
+	    <h3 class="ui-li-aside" style="margin-top:2px; margin-right:7px;">1,120,000.99</h3>
+	  </div>
+	  <div style="clear:both"></div>
+        </li>
+
+        <li>
+	  <div>
+	    <a href="#" class="left-btn" data-role="button" data-inline="true" data-icon="arrow-d" data-iconpos="notext"></a>
+	  </div>
+	  <div>
+	    <a href="#" class="right-btn" data-role="button" data-inline="true" data-icon="delete" data-iconpos="notext"></a>
+	  </div>
+	  <div>
+	    <h3></h3>
+	    <h3 class="ui-li-aside" style="margin-top:2px; margin-right:100px; width:100px;">1,000,000.25</h3>
+	  </div>
+	  <div style="clear:both"></div>
         </li>
        
       </ul>
@@ -269,12 +338,20 @@ var planMode = true;
     Plan.sync('#home');
   });
 
-  $('#sales').live( 'pageinit', function() {
-    Plan.init('#sales');
+  $('#journal').live( 'pageinit', function() {
+    Plan.init('#journal');
   });
 
-  $('#sales').live( 'pageshow', function() {
-    Plan.sync('#sales');
+  $('#journal').live( 'pageshow', function() {
+    Plan.sync('#journal');
+  });
+
+  $('#entry-log').live( 'pageinit', function() {
+    Plan.init('#entry-log');
+  });
+
+  $('#entry-log').live( 'pageshow', function() {
+    Plan.sync('#entry-log');
   });
 
 
