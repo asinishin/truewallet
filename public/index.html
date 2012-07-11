@@ -183,10 +183,10 @@
 
         <li>
 	  <div>
-	    <a href="#" class="left-btn" data-role="button" data-inline="true" data-icon="arrow-d" data-iconpos="notext"></a>
+	    <a href="#" class="left-btn" data-role="button" data-inline="true" data-icon="delete" data-iconpos="notext"></a>
 	  </div>
 	  <div>
-	    <a href="#" class="right-btn" data-role="button" data-inline="true" data-icon="delete" data-iconpos="notext"></a>
+	    <a href="#entry" class="right-btn" data-role="button" data-inline="true" data-icon="arrow-d" data-iconpos="notext"></a>
 	  </div>
 	  <div>
 	    <h3></h3>
@@ -197,10 +197,10 @@
 
         <li>
 	  <div>
-	    <a href="#" class="left-btn" data-role="button" data-inline="true" data-icon="arrow-d" data-iconpos="notext"></a>
+	    <a href="#" class="left-btn" data-role="button" data-inline="true" data-icon="delete" data-iconpos="notext"></a>
 	  </div>
 	  <div>
-	    <a href="#" class="right-btn" data-role="button" data-inline="true" data-icon="delete" data-iconpos="notext"></a>
+	    <a href="#entry" class="right-btn" data-role="button" data-inline="true" data-icon="arrow-d" data-iconpos="notext"></a>
 	  </div>
 	  <div>
 	    <h3></h3>
@@ -211,8 +211,9 @@
        
       </ul>
 
-      <div style="text-align: center; padding-top: 28px;"> 
-	<a href="#home" data-rel="back" data-role="button" data-inline="true" data-icon="arrow-l">Back</a>
+      <div style="text-align:center; padding-top: 28px;" class="ui-grid-a"> 
+	<div class="ui-block-b"><a href="#home" data-rel="back" data-role="button" data-inline="true" data-icon="arrow-l">Back</a></div>
+	<div class="ui-block-b"><a href="#entry" data-role="button" data-inline="true" data-icon="plus">New</a></div>
       </div>
 
     </div>
@@ -285,9 +286,9 @@
           </fieldset>
         </div>
         
-	<div class="ui-grid-a">
-	  <div class="ui-block-b"><a href="#" data-role="button" data-rel="back">OK</a></div>
-	  <div class="ui-block-b"><a href="#" data-role="button" data-rel="back">Cancel</a></div>
+	<div class="ui-grid-a" style="text-align:center;margin-top:20px">
+	  <div class="ui-block-b"><a href="#home" data-role="button" data-inline="true" data-icon="check" data-rel="back">OK</a></div>
+	  <div class="ui-block-b"><a href="#home" data-role="button" data-inline="true" data-rel="back">Cancel</a></div>
 	</div>
 
       </form>
@@ -316,9 +317,45 @@
           </fieldset>
         </div>
         
-	<div class="ui-grid-a">
-	  <div class="ui-block-b"><a href="#" data-role="button" data-rel="back">OK</a></div>
-	  <div class="ui-block-b"><a href="#" data-role="button" data-rel="back">Cancel</a></div>
+	<div class="ui-grid-a" style="text-align:center;margin-top:20px">
+	  <div class="ui-block-b"><a href="#home" data-role="button" data-inline="true" data-icon="check" data-rel="back">OK</a></div>
+	  <div class="ui-block-b"><a href="#home" data-role="button" data-inline="true" data-rel="back">Cancel</a></div>
+	</div>
+
+      </form>
+    </div>
+
+  </div>
+
+  <div data-role="page" id="entry">
+
+    <div data-role="header">
+      <h1>Post Entry</h1>
+    </div>
+
+    <div data-role="content"> 
+      <form action="index.html" method="post">
+
+        <div data-role="fieldcontain">
+          <fieldset data-role="controlgroup">
+	    <label for="in_out">Money flow:</label>
+	    <select name="in_out" id="in_out" data-role="slider">
+	      <option value="in">In</option>
+	      <option value="out">Out</option>
+	    </select> 
+          </fieldset>
+	</div>
+
+        <div data-role="fieldcontain">
+          <fieldset data-role="controlgroup">
+	    <label for="amount">Amount:</label>
+	    <input style="text-align:right" type="text" name="amount" id="amount" value="0.00"  />
+          </fieldset>
+        </div>
+        
+	<div class="ui-grid-a" style="text-align:center;margin-top:20px">
+	  <div class="ui-block-b"><a href="#home" data-role="button" data-inline="true" data-icon="check" data-rel="back">OK</a></div>
+	  <div class="ui-block-b"><a href="#home" data-role="button" data-inline="true" data-rel="back">Cancel</a></div>
 	</div>
 
       </form>
