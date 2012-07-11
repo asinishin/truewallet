@@ -7,7 +7,14 @@
   <link rel="stylesheet" href="assets/application.css" />
   <script type="text/javascript" src="assets/application.js"></script>
   <style>
-    .slider-holder .ui-slider-switch { width: 10em }
+    .subheader { text-align: center; padding-bottom: 17px }
+    .subheader h3, h2 { margin: 0 }
+    .back-btn {
+      float: left;
+      position: absolute;
+      top: 4.4em;
+      left: 5px;
+    }
   </style>
 </head> 
 <body>
@@ -19,15 +26,16 @@
 	<ul>
 	  <li><a href="#" class="plan_switcher" data-icon="star">Plan</a></li>
 	  <li><a href="#period" data-icon="grid">Jul 2012</a></li>
-	  <li><a href="#" data-icon="gear">Settings</a></li>
+	  <li><a href="#settings" data-icon="gear">Settings</a></li>
 	</ul>
       </div>
     </div>
 
     <div data-role="content">
 
-      <div style="text-align: center; padding-bottom: 18px;"> 
-	<h2>Overall Funds</h2>
+      <div class="subheader"> 
+        <h2>Overview of</h2>
+	<h3>All Wallets</h3>
       </div>
 
       <ul data-role="listview">
@@ -103,16 +111,17 @@
 	<ul>
 	  <li><a href="#" class="plan_switcher" data-icon="star">Plan</a></li>
 	  <li><a href="#period" data-icon="grid">Jul 2012</a></li>
-	  <li><a href="#" data-icon="gear">Settings</a></li>
+	  <li><a href="#settings" data-icon="gear">Settings</a></li>
 	</ul>
       </div>
     </div>
 
     <div data-role="content">
 
-      <a href="#home" style="float:left; position:absolute; top:5.0em; left:5px;" data-rel="back" data-role="button" data-inline="true" data-icon="arrow-l" data-iconpos="notext">Button</a>
-      <div style="text-align: center; padding-bottom: 18px;"> 
-	<h2>Overall Sales</h2>
+      <a href="#home" class="back-btn" data-rel="back" data-role="button" data-inline="true" data-icon="arrow-l" data-iconpos="notext">Button</a>
+      <div class="subheader"> 
+	<h2>Sales at</h2>
+	<h3>All Wallets</h3>
       </div>
 
       <ul data-role="listview">
@@ -199,6 +208,37 @@
 	      <option value="monthly" selected>Monthly</option>
 	      <option value="weekly">Weekly</option>
 	      <option value="daily">Daily</option>
+	    </select>
+          </fieldset>
+        </div>
+        
+	<div class="ui-grid-a">
+	  <div class="ui-block-b"><a href="#" data-role="button" data-rel="back">OK</a></div>
+	  <div class="ui-block-b"><a href="#" data-role="button" data-rel="back">Cancel</a></div>
+	</div>
+
+      </form>
+    </div>
+
+  </div>
+
+  <div data-role="page" id="settings">
+
+    <div data-role="header">
+      <h1>Settings</h1>
+    </div>
+
+    <div data-role="content"> 
+      <form action="index.html" method="post">
+
+        <div data-role="fieldcontain">
+          <fieldset data-role="controlgroup">
+            <legend>Select wallet:</legend>
+	    <select name="walletSelect" id="walletSelect" data-native-menu="false">
+	      <option value="all">All Wallets</option>
+	      <option value="blue">Blue Wallet</option>
+	      <option value="green" selected>Green Wallet</option>
+	      <option value="piggy">Piggy Bank</option>
 	    </select>
           </fieldset>
         </div>
