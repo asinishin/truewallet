@@ -20,7 +20,7 @@
       <ul data-role="listview">
 
         <li data-icon="arrow-u" class="subheader" >
-	  <a href="#wallets">
+	  <a href="#select_wallet">
 	    <h2>Overview of</h2>
 	    <h3>All Wallets</h3>
 	  </a>
@@ -89,7 +89,7 @@
 	<ul>
 	  <li><a href="#" class="plan_switcher" data-icon="star">Plan</a></li>
 	  <li><a href="#period" data-icon="grid">Jul 2012</a></li>
-	  <li class="ui-disabled"><a href="#wallets" data-icon="gear">Edit</a></li>
+	  <li class="ui-disabled"><a href="#" data-icon="gear">Edit</a></li>
 	</ul>
       </div>
     </div>
@@ -103,7 +103,7 @@
       <ul data-role="listview">
 
         <li data-icon="arrow-u" class="subheader" >
-	  <a href="#wallets">
+	  <a href="#select_wallet">
 	    <h2>Sales at</h2>
 	    <h3>All Wallets</h3>
 	  </a>
@@ -150,7 +150,7 @@
       <ul data-role="listview">
 
         <li data-icon="arrow-u" class="subheader" >
-	  <a href="#wallets">
+	  <a href="#select_wallet">
 	    <h2>Programming at</h2>
 	    <h3>Blue Wallet</h3>
 	  </a>
@@ -263,7 +263,7 @@
 
   </div>
 
-  <div data-role="page" id="wallets">
+  <div data-role="page" id="select_wallet">
 
     <div data-role="header">
       <h1>Wallets</h1>
@@ -281,6 +281,72 @@
 	      <option value="green" selected>Green Wallet</option>
 	      <option value="piggy">Piggy Bank</option>
 	    </select>
+          </fieldset>
+        </div>
+        
+	<div style="margin-top:40px">
+	  <a href="#home" data-role="button" data-rel="back">OK</a>
+	</div>
+
+	<div style="margin-top:40px">
+	  <a href="#new_wallet" data-role="button">New wallet</a>
+	</div>
+
+	<div style="margin-top:40px">
+	  <a href="#edit_wallets" data-role="button">Edit wallet names</a>
+	</div>
+
+      </form>
+    </div>
+
+  </div>
+
+  <div data-role="page" id="new_wallet">
+
+    <div data-role="header">
+      <h1>New Wallet</h1>
+    </div>
+
+    <div data-role="content"> 
+      <form action="index.html" method="post">
+
+        <div data-role="fieldcontain">
+          <fieldset data-role="controlgroup">
+	    <label for="wallet">Wallet code:</label>
+	    <input type="text" name="wallet" id="wallet" value=""  />
+          </fieldset>
+        </div>
+        
+	<div style="margin-top:40px">
+	  <a href="#home" data-role="button" data-rel="back">Create wallet</a>
+	</div>
+
+      </form>
+    </div>
+
+  </div>
+
+  <div data-role="page" id="edit_wallets">
+
+    <div data-role="header">
+      <h1>Edit Wallets</h1>
+    </div>
+
+    <div data-role="content"> 
+      <form action="index.html" method="post">
+
+        <div data-role="fieldcontain">
+          <fieldset data-role="controlgroup">
+	    <input type="text" name="wallet" id="wallet" value="Blue Wallet" style="float: left;width: 75%;"/>
+	    <a href="#home" data-role="button" data-icon="delete" data-iconpos="notext" style="float: left; margin-left:20px; margin-top:6px;"></a>
+          </fieldset>
+          <fieldset data-role="controlgroup">
+	    <input type="text" name="wallet" id="wallet" value="Green Wallet" style="float: left;width: 75%;"/>
+	    <a href="#home" data-role="button" data-icon="delete" data-iconpos="notext" style="float: left; margin-left:20px; margin-top:6px;"></a>
+          </fieldset>
+          <fieldset data-role="controlgroup">
+	    <input type="text" name="wallet" id="wallet" value="Piggy Bank" style="float: left;width: 75%;"/>
+	    <a href="#home" data-role="button" data-icon="delete" data-iconpos="notext" style="float: left; margin-left:20px; margin-top:6px;"></a>
           </fieldset>
         </div>
         
@@ -329,12 +395,12 @@
 
         <div data-role="fieldcontain">
           <fieldset data-role="controlgroup">
-	    <input type="text" name="account" id="account" value="Programming" style="float: left;width: 80%;"/>
-	    <a href="#home" data-role="button" data-icon="delete" data-iconpos="notext" style="float: left; margin-left:30px; margin-top:6px;"></a>
+	    <input type="text" name="account" id="account" value="Programming" style="float: left;width: 75%;"/>
+	    <a href="#home" data-role="button" data-icon="delete" data-iconpos="notext" style="float: left; margin-left:20px; margin-top:6px;"></a>
           </fieldset>
           <fieldset data-role="controlgroup">
-	    <input type="text" name="account" id="account" value="Testing" style="float: left;width: 80%;"/>
-	    <a href="#home" data-role="button" data-icon="delete" data-iconpos="notext" style="float: left; margin-left:30px; margin-top:6px;"></a>
+	    <input type="text" name="account" id="account" value="Testing" style="float: left;width: 75%;"/>
+	    <a href="#home" data-role="button" data-icon="delete" data-iconpos="notext" style="float: left; margin-left:20px; margin-top:6px;"></a>
           </fieldset>
         </div>
         
@@ -358,12 +424,12 @@
 
         <div data-role="fieldcontain">
           <fieldset data-role="controlgroup">
-	    <a href="#home" data-role="button" data-icon="delete" data-iconpos="notext" style="float: left; margin-right:30px; margin-top:6px;"></a>
-	    <input type="text" name="account" id="account" value="1,120,000.99" style="text-align:right; float: left; width: 80%;"/>
+	    <a href="#home" data-role="button" data-icon="delete" data-iconpos="notext" style="float: left; margin-right:20px; margin-top:6px;"></a>
+	    <input type="text" name="account" id="account" value="1,120,000.99" style="text-align:right; float: left; width: 75%;"/>
           </fieldset>
           <fieldset data-role="controlgroup">
-	    <input type="text" name="account" id="account" value="1,000,000.25" style="text-align:right; float: left; width: 80%;"/>
-	    <a href="#home" data-role="button" data-icon="delete" data-iconpos="notext" style="float: left; margin-left:30px; margin-top:6px;"></a>
+	    <input type="text" name="account" id="account" value="1,000,000.25" style="text-align:right; float: left; width: 75%;"/>
+	    <a href="#home" data-role="button" data-icon="delete" data-iconpos="notext" style="float: left; margin-left:20px; margin-top:6px;"></a>
           </fieldset>
         </div>
         
