@@ -7,47 +7,24 @@
   <link rel="stylesheet" href="assets/application.css" />
   <script type="text/javascript" src="assets/application.js"></script>
   <style>
-    .subheader {
-      text-align: center;
-      margin-left: 50px;
-      margin-right: 50px;
-      padding-bottom: 17px;
-    }
     .subheader h3, h2 { margin: 0 }
-    .right-btn {
-      float: right;
-      top: 0px;
-      right: 5px;
-    }
-    .left-btn {
-      float: left;
-      top: 0px;
-      left: 5px;
-    }
+    .subheader a { padding: 0; text-align: center; }
   </style>
 </head> 
 <body>
 
-  <div data-role="page" id="home">
-
-    <div data-role="header" data-position="fixed">
-      <div data-role="navbar">
-	<ul>
-	  <li><a href="#" class="plan_switcher" data-icon="star">Plan</a></li>
-	  <li><a href="#period" data-icon="grid">Jul 2012</a></li>
-	  <li><a href="#settings" data-icon="gear">Settings</a></li>
-	</ul>
-      </div>
-    </div>
+  <div data-role="page" id="home" class="mform">
 
     <div data-role="content">
 
-      <div class="subheader"> 
-        <h2>Overview of</h2>
-	<h3>All Wallets</h3>
-      </div>
-
       <ul data-role="listview">
+
+        <li data-icon="arrow-u" class="subheader" >
+	  <a href="#wallets">
+	    <h2>Overview of</h2>
+	    <h3>All Wallets</h3>
+	  </a>
+        </li>
 
         <li>
 	  <h3>Opening ballance</h3>
@@ -107,32 +84,30 @@
       </ul>
     </div>
 
-    <div data-role="footer">
-      <h4>&copy; 2012 Truewallet</h4>
-    </div>
-
-  </div>
-
-  <div data-role="page" id="journal">
-    <div data-role="header" data-position="fixed">
+    <div data-role="footer" data-position="fixed">
       <div data-role="navbar">
 	<ul>
 	  <li><a href="#" class="plan_switcher" data-icon="star">Plan</a></li>
 	  <li><a href="#period" data-icon="grid">Jul 2012</a></li>
-	  <li><a href="#settings" data-icon="gear">Settings</a></li>
+	  <li class="ui-disabled"><a href="#wallets" data-icon="gear">Edit</a></li>
 	</ul>
       </div>
     </div>
 
-    <div data-role="content">
-      <a href="#home" class="left-btn" data-rel="back" data-role="button" data-inline="true" data-icon="arrow-l" data-iconpos="notext"></a>
+  </div>
 
-      <div class="subheader"> 
-	<h2>Sales at</h2>
-	<h3>All Wallets</h3>
-      </div>
+  <div data-role="page" id="journal" class="mform">
+
+    <div data-role="content">
 
       <ul data-role="listview">
+
+        <li data-icon="arrow-u" class="subheader" >
+	  <a href="#wallets">
+	    <h2>Sales at</h2>
+	    <h3>All Wallets</h3>
+	  </a>
+        </li>
 
         <li>
           <a href="#entry-log">
@@ -142,52 +117,42 @@
         </li>
 
         <li>
-	  <h3>Testing</h3>
-	  <h3 class="ui-li-aside" style="margin-top:9px; margin-right:20px;">1,000,000.25</h3>
+          <a href="#entry-log">
+	    <h3>Testing</h3>
+	    <h3 class="ui-li-aside" style="margin-top:9px; margin-right:5px;">1,000,000.25</h3>
+	  </a>
         </li>
        
       </ul>
 
-      <div style="text-align: center; padding-top: 28px;"> 
-	<a href="#home" data-rel="back" data-role="button" data-inline="true" data-icon="arrow-l">Back</a>
-      </div>
-
     </div>
 
-    <div data-role="footer">
-      <h4>&copy; 2012 Truewallet</h4>
-    </div>
-
-  </div>
-
-  <div data-role="page" id="entry-log">
-    <div data-role="header" data-position="fixed">
+    <div data-role="footer" data-position="fixed">
       <div data-role="navbar">
 	<ul>
 	  <li><a href="#" class="plan_switcher" data-icon="star">Plan</a></li>
 	  <li><a href="#period" data-icon="grid">Jul 2012</a></li>
-	  <li><a href="#settings" data-icon="gear">Settings</a></li>
+	  <li class="wallet_switcher"><a href="#wallets" data-icon="gear">Edit</a></li>
 	</ul>
       </div>
     </div>
 
-    <div data-role="content">
-      <a href="#home" class="left-btn" data-rel="back" data-role="button" data-inline="true" data-icon="arrow-l" data-iconpos="notext"></a>
+  </div>
 
-      <div class="subheader"> 
-	<h2>Programming at</h2>
-	<h3>Blue Wallet</h3>
-      </div>
+  <div data-role="page" id="entry-log" class="mform">
+
+    <div data-role="content">
 
       <ul data-role="listview">
 
+        <li data-icon="arrow-u" class="subheader" >
+	  <a href="#wallets">
+	    <h2>Programming at</h2>
+	    <h3>Blue Wallet</h3>
+	  </a>
+        </li>
+
         <li>
-	  <div>
-	    <a href="#" class="left-btn" data-role="button" data-inline="true" data-icon="delete" data-iconpos="notext"></a>
-	  </div>
-	  <div>
-	    <a href="#entry" class="right-btn" data-role="button" data-inline="true" data-icon="arrow-d" data-iconpos="notext"></a>
-	  </div>
 	  <div>
 	    <h3></h3>
 	    <h3 class="ui-li-aside" style="margin-top:2px; margin-right:7px;">1,120,000.99</h3>
@@ -197,12 +162,6 @@
 
         <li>
 	  <div>
-	    <a href="#" class="left-btn" data-role="button" data-inline="true" data-icon="delete" data-iconpos="notext"></a>
-	  </div>
-	  <div>
-	    <a href="#entry" class="right-btn" data-role="button" data-inline="true" data-icon="arrow-d" data-iconpos="notext"></a>
-	  </div>
-	  <div>
 	    <h3></h3>
 	    <h3 class="ui-li-aside" style="margin-top:2px; margin-right:100px; width:100px;">1,000,000.25</h3>
 	  </div>
@@ -211,15 +170,20 @@
        
       </ul>
 
-      <div style="text-align:center; padding-top: 28px;" class="ui-grid-a"> 
-	<div class="ui-block-b"><a href="#home" data-rel="back" data-role="button" data-inline="true" data-icon="arrow-l">Back</a></div>
-	<div class="ui-block-b"><a href="#entry" data-role="button" data-inline="true" data-icon="plus">New</a></div>
+      <div style="padding-top: 50px;"> 
+	<a href="#entry" data-role="button">New entry</a>
       </div>
 
     </div>
 
-    <div data-role="footer">
-      <h4>&copy; 2012 Truewallet</h4>
+    <div data-role="footer" data-position="fixed">
+      <div data-role="navbar">
+	<ul>
+	  <li><a href="#" class="plan_switcher" data-icon="star">Plan</a></li>
+	  <li><a href="#period" data-icon="grid">Jul 2012</a></li>
+	  <li class="wallet_switcher"><a href="#wallets" data-icon="gear">Edit</a></li>
+	</ul>
+      </div>
     </div>
 
   </div>
@@ -286,9 +250,8 @@
           </fieldset>
         </div>
         
-	<div class="ui-grid-a" style="text-align:center;margin-top:20px">
-	  <div class="ui-block-b"><a href="#home" data-role="button" data-inline="true" data-icon="check" data-rel="back">OK</a></div>
-	  <div class="ui-block-b"><a href="#home" data-role="button" data-inline="true" data-rel="back">Cancel</a></div>
+	<div style="margin-top:20px">
+	  <a href="#home" data-role="button" data-rel="back">OK</a>
 	</div>
 
       </form>
@@ -296,10 +259,10 @@
 
   </div>
 
-  <div data-role="page" id="settings">
+  <div data-role="page" id="wallets">
 
     <div data-role="header">
-      <h1>Settings</h1>
+      <h1>Wallets</h1>
     </div>
 
     <div data-role="content"> 
@@ -317,9 +280,8 @@
           </fieldset>
         </div>
         
-	<div class="ui-grid-a" style="text-align:center;margin-top:20px">
-	  <div class="ui-block-b"><a href="#home" data-role="button" data-inline="true" data-icon="check" data-rel="back">OK</a></div>
-	  <div class="ui-block-b"><a href="#home" data-role="button" data-inline="true" data-rel="back">Cancel</a></div>
+	<div style="margin-top:40px">
+	  <a href="#home" data-role="button" data-rel="back">OK</a>
 	</div>
 
       </form>
@@ -353,9 +315,8 @@
           </fieldset>
         </div>
         
-	<div class="ui-grid-a" style="text-align:center;margin-top:20px">
-	  <div class="ui-block-b"><a href="#home" data-role="button" data-inline="true" data-icon="check" data-rel="back">OK</a></div>
-	  <div class="ui-block-b"><a href="#home" data-role="button" data-inline="true" data-rel="back">Cancel</a></div>
+	<div style="margin-top:40px">
+	  <a href="#home" data-role="button" data-rel="back">OK</a>
 	</div>
 
       </form>
@@ -367,56 +328,35 @@
 <script>
 var planMode = true;
 
-  $('#home').live( 'pageinit', function() {
-    Plan.init('#home');
+$('.mform').live('pageinit', function(){
+  $(this).find('a.plan_switcher').bind('vclick', function(){
+    if (planMode){
+      planMode = false;
+    } else {
+      planMode = true;
+    }
+    Controls.sync();
+    return false;
   });
+});
 
-  $('#home').live( 'pageshow', function() {
-    Plan.sync('#home');
-  });
+$('.mform').live('pageshow', function(){
+  Controls.sync();
+});
 
-  $('#journal').live( 'pageinit', function() {
-    Plan.init('#journal');
-  });
-
-  $('#journal').live( 'pageshow', function() {
-    Plan.sync('#journal');
-  });
-
-  $('#entry-log').live( 'pageinit', function() {
-    Plan.init('#entry-log');
-  });
-
-  $('#entry-log').live( 'pageshow', function() {
-    Plan.sync('#entry-log');
-  });
-
-
-Plan = {
-  init: function(pg){
-    $(pg + ' a.plan_switcher').bind('vclick', function(){
-      if (planMode){
-	planMode = false;
-      } else {
-	planMode = true;
-      }
-      Plan.sync(pg);
-      return false;
-    });
-  },
-
-  sync: function(pg){
-    var t = '';
+Controls = {
+  sync: function(){
+    var t;
     if (planMode){
       t = 'Plan';
-      $(pg + ' a.plan_switcher span.ui-icon').removeClass('ui-icon-check'); 
-      $(pg + ' a.plan_switcher span.ui-icon').addClass('ui-icon-star'); 
+      $('a.plan_switcher span.ui-icon', $.mobile.activePage).removeClass('ui-icon-check'); 
+      $('a.plan_switcher span.ui-icon', $.mobile.activePage).addClass('ui-icon-star'); 
     } else {
       t = 'Fact';
-      $(pg + ' a.plan_switcher span.ui-icon').removeClass('ui-icon-star'); 
-      $(pg + ' a.plan_switcher span.ui-icon').addClass('ui-icon-check'); 
+      $('a.plan_switcher span.ui-icon', $.mobile.activePage).removeClass('ui-icon-star'); 
+      $('a.plan_switcher span.ui-icon', $.mobile.activePage).addClass('ui-icon-check'); 
     }
-    $(pg + ' a.plan_switcher span.ui-btn-text').text(t); 
+    $('a.plan_switcher span.ui-btn-text', $.mobile.activePage).text(t); 
   }
 }
 </script>
