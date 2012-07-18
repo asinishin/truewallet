@@ -417,11 +417,7 @@ var planMode = true;
 
 $('.mform').live('pageinit', function(){
   $(this).find('a.plan_switcher').bind('vclick', function(){
-    if (planMode){
-      planMode = false;
-    } else {
-      planMode = true;
-    }
+    planMode = !planMode;
     Controls.sync();
     return false;
   });
